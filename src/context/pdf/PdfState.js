@@ -43,7 +43,7 @@ const PdfState = (props) => {
         {
             id: 5,
             imgSource: help,
-            title: 'Help'
+            title:'Help'
         }
     ];
 
