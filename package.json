@@ -1,0 +1,65 @@
+{
+  "name": "pdfx_tools",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@headlessui/react": "^1.7.16",
+    "@heroicons/react": "^2.0.18",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "buffer": "^6.0.3",
+    "docxtemplater": "^3.37.13",
+    "express": "^4.18.2",
+    "file-saver": "^2.0.5",
+    "html2canvas": "^1.4.1",
+    "image-compression": "^0.0.6",
+    "image-js": "^0.35.4",
+    "jspdf": "^2.5.1",
+    "jszip": "^3.10.1",
+    "mammoth": "^1.6.0",
+    "multer": "^1.4.5-lts.1",
+    "pdf-extractor": "^2.2.0",
+    "pdf-lib": "^1.17.1",
+    "pdfjs": "^2.5.2",
+    "pdfjs-dist": "^3.9.179",
+    "pizzip": "^3.1.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
+    "react-pdf": "^7.3.3",
+    "react-router-dom": "^6.15.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "daisyui": "^3.5.1",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3"
+  }
+}

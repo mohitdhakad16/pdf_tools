@@ -1,0 +1,306 @@
+/* ======== logo css ============ */
+.imgBox img {
+    height: 100%;
+    width: 100%;
+    filter: invert(100%);
+}
+
+.imgBox {
+    height: 60px;
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .imgBox {
+        height: 50px;
+        width: 90px;
+    }
+}
+
+/* ============= header css ============ */
+
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Adjust as needed */
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.content {
+    /* Style your content on top of the video background */
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ============= social icon logo ============= */
+.socialIcon img {
+    height: 100%;
+    width: 100%;
+}
+
+.socialIcon {
+    margin: 10px;
+    height: 30px;
+    width: 30px;
+}
+
+@media (max-width: 768px) {
+    .socialIcon {
+        height: 25px;
+        width: 25px;
+    }
+}
+
+/* ============= heading content css ========= */
+.heading {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: bolder;
+
+}
+
+.subheading {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.headingContent {
+    width: 100%;
+    margin: 7rem auto;
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2.5rem;
+        padding: 10px;
+    }
+
+    .subheading {
+        font-size: 1rem;
+    }
+
+    .headingContent {
+        margin: 5rem auto;
+    }
+}
+
+.exploreBtn {
+    width: 6.5em;
+    height: 2.3em;
+    background: black;
+    color: white;
+    border: 1px solid white;
+    font-size: 20px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.exploreBtn:hover {
+    color: black;
+}
+
+.exploreBtn:after {
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+}
+
+.exploreBtn:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+/* ============ Cards.js CSS ============ */
+.cardImg img {
+    height: 100%;
+    width: 100%;
+}
+
+.cardImg {
+    height: 100px;
+    width: 100px;
+}
+
+.box {
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    border: 1px solid rgb(184, 183, 183);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: transform all 0.3s ease-in-out;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.box:hover {
+    box-shadow: 0px 0px 3px 0px black;
+    transform: scale(1.02);
+}
+
+.cards {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 990px) {
+    .cardImg {
+        height: 70px;
+        width: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cardImg {
+        height: 50px;
+        width: 50px;
+    }
+
+    .box {
+        height: 150px;
+        width: 150px;
+    }
+
+    .card-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width:450px) {
+    .box {
+        height: 120px;
+        width: 120px;
+    }
+
+    .cardImg {
+        height: 30px;
+        width: 30px;
+    }
+
+    .card-text {
+        font-size: 12px;
+    }
+
+    .container .text-3xl {
+        font-size: 22px;
+    }
+}
+
+/* ======== dashboards.js CSS ============  */
+.icons img {
+    height: 100%;
+    width: 100%;
+}
+
+.icons {
+    height: 20px;
+    width: 20px;
+    /* filter: invert(100%); */
+}
+
+/* ============ Imageto PDF file input CSS ============== */
+
+.fileImg img {
+    height: 100%;
+    width: 100%;
+}
+
+.fileImg {
+    height: 100px;
+    width: 100px;
+}
+
+@media (max-width:768px) {
+    .fileImg {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.imagebox {
+    height: auto;
+    width: auto;
+}
+
+
+/* ============== loader CSS ========== */
+.loader {
+    display: flex;
+    justify-content: center;
+}
+
+.bar {
+    width: 7px;
+    height: 18px;
+    margin: 0 9px;
+    border-radius: 10px;
+    animation: loading_5192 1s ease-in-out infinite;
+    background-color: aqua;
+}
+
+.bar:nth-child(1) {
+    animation-delay: 0.01s;
+}
+
+.bar:nth-child(2) {
+    animation-delay: 0.09s;
+}
+
+.bar:nth-child(3) {
+    animation-delay: 0.19s;
+}
+
+.bar:nth-child(4) {
+    animation-delay: 0.29s;
+}
+
+@keyframes loading_5192 {
+    0% {
+        transform: scale(1);
+    }
+
+    20% {
+        transform: scale(1, 2.5);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+.deleteButton span {
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .deleteButton span {
+        font-size: 18px;
+    }
+}
