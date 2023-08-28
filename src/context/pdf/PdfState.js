@@ -12,7 +12,6 @@ import AddPageNo from '../../components/specifications/AddPageNo'
 import help from '../../images/dashboard icons/question.png'
 import TextPDF from '../../components/specifications/TextPDF'
 import textPDF from '../../images/text-format.png'
-import jsPDF from 'jspdf';       // using jsPDF external library that allow you to convert images to pdf
 
 const PdfState = (props) => {
 
@@ -53,7 +52,6 @@ const PdfState = (props) => {
     const [selectedComponent, setSelectedComponent] = useState(<Cards />);
 
     let handleClick = (id) => {
-        setToggle('transform-none');
         const clickedItem = dashboardItems.find(item => item.id === id);  // accessing the id of the each object from the array when it is clicked on the object id
         if (clickedItem) {
             setSelectedComponent(clickedItem.component);
@@ -99,7 +97,7 @@ const PdfState = (props) => {
 
     return (
         <div>
-            <pdfContext.Provider value={{ dashboardItems, handleClick, selectedComponent, handleModeClick, setMode, mode, border, filter, themeImg, toggle, maxFileNameLength }}>
+            <pdfContext.Provider value={{ dashboardItems, handleClick, selectedComponent, handleModeClick, setMode, mode, border, filter, themeImg, maxFileNameLength }}>
                 {props.children}
             </pdfContext.Provider>
         </div>
