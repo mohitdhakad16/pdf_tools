@@ -34,7 +34,7 @@ const ImagesToPdf = () => {
             src: URL.createObjectURL(file),
         }));
         // setSelectedFiles(fileWithPreviews);
-        setDisplayedFiles(fileWithPreviews); // Update displayedFiles
+        setDisplayedFiles((prevFiles) => [...prevFiles, ...fileWithPreviews]); // Update displayedFiles
     };
 
     // 2) Deleting the image which u don't want to add into ur pdf
@@ -138,14 +138,17 @@ const ImagesToPdf = () => {
                                         <div className="deleteButton text-left">
                                             <span className={`material-symbols-outlined cursor-pointer text-red-600`} onClick={() => { handleDelete(index) }}>delete</span>
                                         </div>
-                                        <div className={`imgSection p-2 flex flex-col justify-center border-${border} border-2`}>
-                                            <div className={`fileImg p-2 mx-2  cursor-pointer`}>
+                                        <div className={`imgSection p-1 flex flex-col justify-center border-${border} border-2`}>
+                                            <div className={`fileImg p-1 flex justify-center items-center mx-2  cursor-pointer`}>
                                                 <img src={file.src} alt={file.file.name} />
                                             </div>
                                         </div>
-                                        <div className={`text-sm text-${mode === 'gray-800' ? 'gray-50' : 'gray-800'}`}> {file.file.name.length > maxFileNameLength
-                                            ? `${file.file.name.substring(0, maxFileNameLength)}...`
-                                            : file.file.name}</div>
+                                        <div className={`relative group cursor-pointer my-2 text-sm ${mode === 'gray-800' ? 'text-gray-50' : 'text-gray-800'}`}>
+                                            {file.file.name.replace(/\s/g, '').length > maxFileNameLength
+                                                ? `${file.file.name.replace(/\s/g, '').substring(0, Math.floor((maxFileNameLength - 2) / 2))}...${file.file.name.replace(/\s/g, '').substring(file.file.name.replace(/\s/g, '').length - Math.floor((maxFileNameLength - 3)))}`
+                                                : file.file.name}
+                                            <span className="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-1 hidden w-max bg-gray-700 text-white text-xs rounded px-2 py-1 group-hover:block"> {file.file.name} </span>
+                                        </div>
                                     </div>
                                 ))}
                             </ul>
@@ -235,7 +238,7 @@ const ImagesToPdf = () => {
                         </div>
                     </div>
                 )}
-               
+
             </div >
         </>
     );

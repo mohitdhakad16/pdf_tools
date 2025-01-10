@@ -12,7 +12,6 @@ import AddPageNo from '../../components/specifications/AddPageNo'
 import help from '../../images/dashboard icons/question.png'
 import TextPDF from '../../components/specifications/TextPDF'
 import textPDF from '../../images/text-format.png'
-import jsPDF from 'jspdf';       // using jsPDF external library that allow you to convert images to pdf
 
 const PdfState = (props) => {
 
@@ -50,15 +49,21 @@ const PdfState = (props) => {
 
     // ======= Dynamically replacing <Cards> component with the dashboard items ===========
 
-    const [selectedComponent, setSelectedComponent] = useState(<Cards />);
+    // Retrieve the last selected dashboard item ID from local storage
+    const savedComponentId = localStorage.getItem('selectedComponentId');
 
-    let handleClick = (id) => {
-        setToggle('transform-none');
-        const clickedItem = dashboardItems.find(item => item.id === id);  // accessing the id of the each object from the array when it is clicked on the object id
+    // Find the corresponding component or default to <Cards />
+    const initialComponent = savedComponentId ? dashboardItems.find(item => item.id === Number(savedComponentId))?.component : <Cards />;
+
+    const [selectedComponent, setSelectedComponent] = useState(initialComponent);
+
+    const handleClick = (id) => {
+        const clickedItem = dashboardItems.find(item => item.id === id);
         if (clickedItem) {
             setSelectedComponent(clickedItem.component);
+            localStorage.setItem('selectedComponentId', id); // Save the selected item ID to local storage
         }
-    }
+    };
 
     // ============== Light Mode and Dark Mode ==================
 
@@ -99,7 +104,9 @@ const PdfState = (props) => {
 
     return (
         <div>
-            <pdfContext.Provider value={{ dashboardItems, handleClick, selectedComponent, handleModeClick, setMode, mode, border, filter, themeImg, toggle, maxFileNameLength }}>
+            <pdfContext.Provider value={{
+                dashboardItems, handleClick, selectedComponent, handleModeClick, setMode, mode, border, filter, themeImg, maxFileNameLength
+            }}>
                 {props.children}
             </pdfContext.Provider>
         </div>

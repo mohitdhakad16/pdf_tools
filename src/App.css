@@ -1,4 +1,5 @@
 /* ======== logo css ============ */
+
 .imgBox img {
     height: 100%;
     width: 100%;
@@ -227,26 +228,27 @@
 
 /* ============ Imageto PDF file input CSS ============== */
 
-.fileImg img {
-    height: 100%;
-    width: 100%;
+.fileImg {
+    height: 120px;
+    width: 120px;
+    overflow: hidden;
+    /* Ensure excess image outside the container is hidden */
 }
 
-.fileImg {
-    height: 100px;
-    width: 100px;
+.fileImg img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    /* Ensures the full image fits inside the container without distortion */
 }
 
 @media (max-width:768px) {
-    .fileImg {
-        height: 50px;
-        width: 50px;
-    }
-}
 
-.imagebox {
-    height: auto;
-    width: auto;
+    .fileImg {
+        height: 100px;
+        width: 100px;
+        overflow: hidden;
+    }
 }
 
 
